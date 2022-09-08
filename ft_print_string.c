@@ -1,18 +1,15 @@
 #include "ft_printf.h"
-#include "Libft/libft.h"
 
 char    ft_print_string(char *string)
 {
-       if(!string)
-       {
-            ft_putstr_fd("(null)", 1);
-            return (6);
-       }
-       ft_putstr_fd(string, 1);
-       return (ft_strlen(string));
-}
+    int i;
 
-int main()
-{
-    ft_print_string("test");
+    i = 0;
+    while (string[i] != '\0')
+    {
+        write(1, &string[i], 1);
+        i++;
+    }
+
+    return (string[i]);
 }
